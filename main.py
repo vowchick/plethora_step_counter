@@ -6,7 +6,7 @@ from firebase_admin import db
 from get_results import get_result
 
 
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
+BOT_TOKEN = "6147728737:AAEyqSKjjhK3-CmVJzRe6KNBNw3I_Rg_afY"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
