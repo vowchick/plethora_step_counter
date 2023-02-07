@@ -41,6 +41,6 @@ def update_score(message):
         x[username] = int (message.text)
     ref.set (x)
     res = get_result (ref)
-    bot.reply_to(message, "Success! Updated scoreboard:\n" + res)
+    bot.reply_to(message, "Success! Updated scoreboard here:\n" + res)
 
 bot.infinity_polling()
