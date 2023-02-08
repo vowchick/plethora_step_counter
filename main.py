@@ -36,9 +36,9 @@ def update_score(message):
     if x is None:
         x = dict ()
     if username in x:
-        x[username] += int (message.text) / 5000
+        x[username] += int (message.text) // 5000
     else:
-        x[username] = int (message.text) / 5000
+        x[username] = int (message.text) // 5000
     ref.set (x)
     res = get_result (ref)
     bot.reply_to(message, "Success! Updated scoreboard here:\n" + res)
