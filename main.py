@@ -18,7 +18,7 @@ ref = db.reference("/")
 
 @bot.message_handler(commands=['help'])
 def send_help(message):
-    bot.reply_to(message, "Send me a number - amount of steps you walked in one day divided by 5000." + 
+    bot.reply_to(message, "Send me a number - amount of steps you walked in one day." + 
     " You should send the numbers for two best days of the week."
     )
 
@@ -36,9 +36,9 @@ def update_score(message):
     if x is None:
         x = dict ()
     if username in x:
-        x[username] += int (message.text)
+        x[username] += int (message.text) / 5000
     else:
-        x[username] = int (message.text)
+        x[username] = int (message.text) / 5000
     ref.set (x)
     res = get_result (ref)
     bot.reply_to(message, "Success! Updated scoreboard here:\n" + res)
